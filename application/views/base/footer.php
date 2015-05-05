@@ -2,9 +2,9 @@
 
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Version</b> 1.1.1
+          <b data-toggle="tooltip" data-placement="top" title="Versão Atual do projeto">Version</b> 1.1.1
         </div>
-        <strong>Copyright &copy; 2015-2016 <a href="#">Matheus S. Boldrini</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2015-2016 <a href="#" data-toggle="tooltip" data-placement="top" title="Responsável pelo projeto!">Matheus S. Boldrini</a>.</strong> All rights reserved.
       </footer>
      
     </div><!-- ./wrapper -->

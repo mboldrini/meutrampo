@@ -61,7 +61,7 @@
                 <div class="icon">
                   <i class="fa fa-child"></i>
                 </div>
-                <a href="#" class="small-box-footer">Ver Oportunidades <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="<?php echo base_url();?>oportunidades/" class="small-box-footer">Ver Oportunidades <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
           </div><!-- /.row -->

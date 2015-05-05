@@ -13,7 +13,7 @@
 <section class="content">
 
     <section class="col-xs-12">
-      <a href="#" class="btn btn-primary">Cadastrar Oportunidade</a>
+      <a href="<?php echo base_url();?>oportunidades/nova" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Cadastrar nova oportunidade de emprego">Cadastrar Oportunidade</a>
     </section>
 
 	<div class="col-md-12">
@@ -22,7 +22,7 @@
       <div class="panel-heading">
         <h3 class="panel-title">Oportunidades</h3>
           <div class="pull-right">
-            <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+            <button class="btn btn-default btn-xs btn-filter" data-toggle="tooltip" data-placement="top" title="Pesquisar por oportunidades especificas"><span class="fa fa-filter"></span> Filtrar</button>
           </div>
       </div>
       <table class="table">
@@ -44,12 +44,8 @@
             <td>
               <a href="#">Programador</a>
             </td>
-            <td>
-              <a href="#">Contoso</a>
-            </td>
-            <td>
-              <a href="#">Acre</a>
-            </td>
+            <td>Contoso</td>
+            <td>Acre</td>
           </tr>
 
           <tr>
@@ -59,12 +55,8 @@
             <td>
               <a href="#">Designer</a>
             </td>
-            <td>
-              <a href="#">Contoso</a>
-            </td>
-            <td>
-              <a href="#">Roraima</a>
-            </td>
+            <td>Contoso</td>
+            <td>Roraima</td>
           </tr>
 
           <tr>
@@ -74,12 +66,8 @@
             <td>
               <a href="#">Web-Developer</a>
             </td>
-            <td>
-              <a href="#">Contoso</a>
-            </td>
-            <td>
-              <a href="#">Rio de Janeiro</a>
-            </td>
+            <td>Contoso</td>
+            <td>Rio de Janeiro</td>
           </tr>
 
         </tbody>

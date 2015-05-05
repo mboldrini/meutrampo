@@ -22,4 +22,17 @@ class Oportunidades extends CI_Controller {
 
 		$this->load->view('oportunidades',$dados);
 	}
+
+	public function nova(){
+
+		$dados = array(
+			'titulo' => 'Cadastrar Nova Oportunidade - Meu Trampo',
+			'ondeesta' => 'Nova Oportunidade de Emprego',
+			'descricao' => ' - Você está na Página de Cadastro de Oportunidades de emprego!',
+			'tela'=>'nova'
+		);
+
+		$this->load->view('oportunidades',$dados);
+	}
+
 }
