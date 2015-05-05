@@ -12,7 +12,7 @@
 
 <section class="content">
 
-    <section class="col-xs-12">
+    <section class="col-md-12">
       <a href="<?php echo base_url();?>oportunidades/nova" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Cadastrar nova oportunidade de emprego">Cadastrar Oportunidade</a>
     </section>
 

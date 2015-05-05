@@ -18,7 +18,7 @@
 					  	<div class="col-md-12">
 					  		<label for="asfasfaf">Área de Atuação:</label>
 					  	</div>			    
-					    <div class="col-md-3">
+					    <div class="col-md-3 col-xs-8">
 		      				<select class="form-control">
 							  <option value="XXX">Infraestrutura</option>
 							  <option value="XXX">Desenvolvimento</option>
@@ -32,16 +32,16 @@
 					  	<div class="col-md-12">
 					  		<label for="asfasfaf">Cargo:</label>
 					  	</div>			    
-					    <div class="col-md-4">
+					    <div class="col-md-4  col-xs-8">
 		      				<input type="text" class="form-control" id="cargo" placeholder="Cargo">
 		    			</div>
 					  </div>	
 
 					  <div class="form-group">
 					  	<div class="col-md-12">
-					  		<label for="asfasfaf">Estado:</label>
+					  		<label for="estado">Estado:</label>
 					  	</div>			    
-					    <div class="col-md-3">
+					    <div class="col-md-3 col-xs-8">
 		      				<select class="form-control">
 							  <option value="XXX">Espírito Santo</option>
 							  <option value="XXX">Minas Gerais</option>
@@ -53,9 +53,9 @@
 
 					  <div class="form-group">
 					  	<div class="col-md-12">
-					  		<label for="asfasfaf">Cidade:</label>
+					  		<label for="cidade">Cidade:</label>
 					  	</div>			    
-					    <div class="col-md-3">
+					    <div class="col-md-3 col-xs-8">
 		      				<select class="form-control">
 							  <option value="XXX">CIDADE AQUI</option>
 							  <option value="XXX">CIDADE AQUI</option>
@@ -67,9 +67,9 @@
 
 					  <div class="form-group">
 					  	<div class="col-md-12">
-					  		<label for="asfasfaf">Email para contato:</label>
+					  		<label for="email">Email para contato:</label>
 					  	</div>			    
-					    <div class="col-md-4">
+					    <div class="col-md-4 col-xs-12">
 		      				<input type="email" class="form-control" id="email" placeholder="Email para contato">
 		    			</div>
 					  </div>
@@ -78,7 +78,7 @@
 					  	<div class="col-md-12">
 					  		<label for="asfasfaf">Status:</label>
 					  	</div>			    
-					    <div class="col-md-3">
+					    <div class="col-md-3 col-xs-10">
 		      				<select class="form-control">
 							  <option value="XXX">Precisando de Profissionais</option>
 							  <option value="XXX">Realizando Entrevistas</option>

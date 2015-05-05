@@ -35,4 +35,17 @@ class Oportunidades extends CI_Controller {
 		$this->load->view('oportunidades',$dados);
 	}
 
+	public function perfil(){
+
+		$dados = array(
+			'titulo' => 'Ver Oportunidade - Meu Trampo',
+			'ondeesta' => 'Oportunidade de Emprego',
+			'descricao' => ' - Essa é a página de visualização de oportunidades de emprego!',
+			'tela'=>'perfil'
+		);
+
+		$this->load->view('oportunidades',$dados);
+
+	}
+
 }
