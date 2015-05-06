@@ -13,7 +13,7 @@
 <section class="content">
 
     <section class="col-md-12">
-      <a href="<?php echo base_url();?>oportunidades/nova" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Cadastrar nova oportunidade de emprego">Cadastrar Oportunidade</a>
+      <a href="<?php echo base_url();?>oportunidades_empresa/nova" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Cadastrar nova oportunidade de emprego">Cadastrar Oportunidade</a>
     </section>
 
 	<div class="col-md-12">
@@ -31,45 +31,28 @@
             <th><input type="text" class="form-control" placeholder="Código" disabled></th>
             <th><input type="text" class="form-control" placeholder="Cargo" disabled></th>
             <th><input type="text" class="form-control" placeholder="Empresa" disabled></th>
-            <th><input type="text" class="form-control" placeholder="Cidade" disabled></th>
+            <th><input type="text" class="form-control" placeholder="Estado" disabled></th>
           </tr>
         </thead>
         
         <tbody>
-
+    
+        <?php foreach ($oportunidades as $op) { ?>
           <tr>
             <td>
-              <a href="#">001</a>
+              <a href="<?= base_url('oportunidades_empresa/perfil/' . $op->id) ?>">
+                <?php echo $op->id ?>
+              </a>              
             </td>
             <td>
-              <a href="#">Programador</a>
+              <a href="<?= base_url('oportunidades_empresa/perfil/' . $op->id) ?>"><?php echo $op->cargo ?></a>
             </td>
-            <td>Contoso</td>
-            <td>Acre</td>
+            <td><?php echo $op->empresa_responsavel ?></td>
+            <td><?php echo $op->estado ?></td>
           </tr>
+        <?php } ?>
 
-          <tr>
-            <td>
-              <a href="#">002</a>
-            </td>
-            <td>
-              <a href="#">Designer</a>
-            </td>
-            <td>Contoso</td>
-            <td>Roraima</td>
-          </tr>
-
-          <tr>
-            <td>
-              <a href="#">003</a>
-            </td>
-            <td>
-              <a href="#">Web-Developer</a>
-            </td>
-            <td>Contoso</td>
-            <td>Rio de Janeiro</td>
-          </tr>
-
+     
         </tbody>
       </table>
     </div>

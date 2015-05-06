@@ -1,13 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Painel extends CI_Controller {
+class Painel_empresa extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
 
-		$this->load->helper('url');
-		
+		$this->load->helper('url');	
+		/* session do flash data de aviso de cadastro efetuado com sucesso no model*/
+		$this->load->library('session');
 
 	}
 
@@ -19,6 +20,9 @@ class Painel extends CI_Controller {
 			'descricao' => ' - Você está no Painel Principal!'
 		);
 
-		$this->load->view('painel',$dados);
+		$this->load->view('painel_empresa',$dados);
+		
 	}
+
+	
 }
