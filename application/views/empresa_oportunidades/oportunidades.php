@@ -13,7 +13,7 @@
 <section class="content">
 
     <section class="col-md-12">
-      <a href="<?php echo base_url();?>oportunidades_empresa/nova" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Cadastrar nova oportunidade de emprego">Cadastrar Oportunidade</a>
+      <a href="<?php echo base_url();?>empresa/novaOportunidade" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Cadastrar nova oportunidade de emprego">Cadastrar Oportunidade</a>
     </section>
 
 	<div class="col-md-12">
@@ -40,12 +40,12 @@
         <?php foreach ($oportunidades as $op) { ?>
           <tr>
             <td>
-              <a href="<?= base_url('oportunidades_empresa/perfil/' . $op->id) ?>">
+              <a href="<?= base_url('empresa/perfilOportunidade/' . $op->id) ?>">
                 <?php echo $op->id ?>
               </a>              
             </td>
             <td>
-              <a href="<?= base_url('oportunidades_empresa/perfil/' . $op->id) ?>"><?php echo $op->cargo ?></a>
+              <a href="<?= base_url('empresa/perfilOportunidade/' . $op->id) ?>"><?php echo $op->cargo ?></a>
             </td>
             <td><?php echo $op->empresa_responsavel ?></td>
             <td><?php echo $op->estado ?></td>

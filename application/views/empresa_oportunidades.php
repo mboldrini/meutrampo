@@ -5,7 +5,7 @@
 
 
 	if($tela != ''){
-		 $this -> load -> view('oportunidades_empresa/'.$tela);
+		 $this -> load -> view('empresa_oportunidades/'.$tela);
 	}
 
 
