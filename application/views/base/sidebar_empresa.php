@@ -74,25 +74,19 @@
             </li>
 
             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-envelope-o"></i>
-                <span>Mensagens</span>
-              </a>
-            </li>
-
-            <li class="treeview">
               <a href="<?php echo site_url('empresa/oportunidades') ?>">
                 <i class="fa fa-child"></i>
                 <span>Oportunidades</span>
               </a>
-            </li>           
+            </li> 
 
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-archive"></i>
-                <span>Curriculum</span>
+                <i class="fa fa-users"></i>
+                <span>Candidatos</span>
               </a>
             </li>
+
 
           </ul>
         </section>

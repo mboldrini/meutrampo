@@ -34,17 +34,42 @@
                     </button>'.$this->session->flashdata('cadastrook').'</div>';
                   }
                ?>
+
+               	<?php 
+          			foreach ($infos as $info) {
+            			$nome = $info->nome;
+          			}
+        		?>
 				
-				<?php echo form_open('oportunidades_empresa/nova',array('class'=>'form-horizontal'))?>
+				<?php echo form_open('empresa/novaOportunidade',array('class'=>'form-horizontal'))?>
+
+					<div class="form-group">
+					  	<div class="col-md-12">
+					  		<label for="empresa_responsavel"><?php echo form_label('Empresa Responsável:', 'Empresa Responsável') ?></label>
+					  	</div>			    
+					    <div class="col-md-3 col-xs-8">
+		      				<?php echo form_input(
+		                        array(
+		                          'name'=>'empresa_responsavel',
+		                          'type'=>'text',
+		                          'readonly'=>'readonly',
+		                          'value' => $nome
+		                        ),
+		                        
+		                        set_value('empresa_responsavel'),
+		                          'class="form-control"')
+		                      ?>
+	    				</div>
+				  	</div>	
 
 					  <div class="form-group">
 					  	<div class="col-md-12">
 					  		<label for="area_atuacao"><?php echo form_label('Área de atuação:', 'Área de atuação') ?></label>
 					  	</div>			    
 					    <div class="col-md-3 col-xs-8">
-		      				<select class="form-control">
+		      				<select class="form-control" name="area">
 								<?php foreach ($areas as $area) { ?>
-                            		<option value="<?php echo $area->id ?>"><?php echo $area->area ?></option>
+                            		<option value="<?php echo $area->area ?>"><?php echo $area->area ?></option>
                         		<?php } ?>
 							</select>
 		    			</div>
@@ -73,34 +98,34 @@
 					  		<label for="estado"><?php echo form_label('Estado:', 'Estado') ?></label>
 					  	</div>			    
 					    <div class="col-md-3 col-xs-8">
-		      				<select class="form-control">
-							  <option value="AC">Acre</option>
-							  <option value="AL">Alagoas</option>
-							  <option value="AM">Amapá</option>
-							  <option value="AM">Amazonas</option>
-							  <option value="BA">Bahia</option>
-							  <option value="CE">Ceará</option>
-							  <option value="DF">Distrito Federal</option>
-							  <option value="ES">Espírito Santo</option>
-							  <option value="GO">Goiás</option>
-							  <option value="MA">Maranhão</option>
-							  <option value="MT">Mato Grosso</option>
-							  <option value="MS">Mato Grosso do Sul</option>
-							  <option value="MG">Minas Gerais</option>
-							  <option value="PA">Pará</option>
-							  <option value="PB">Paraíba</option>
-							  <option value="PR">Paraná</option>
-							  <option value="PE">Pernambuco</option>
-							  <option value="PI">Piauí</option>
-							  <option value="RJ">Rio de Janeiro</option>
-							  <option value="RN">Rio Grande do Norte</option>
-							  <option value="RS">Rio Grande do Sul</option>
-							  <option value="RO">Rondônia</option>
-							  <option value="RR">Roraima</option>
-							  <option value="SC">Santa Catarina</option>
-							  <option value="SP">São Paulo</option>
-							  <option value="SE">Sergipe</option>
-							  <option value="TO">Tocantins</option>
+		      				<select class="form-control" name='estado'>
+							  <option value="Acre">Acre</option>
+							  <option value="Alagoas">Alagoas</option>
+							  <option value="Amapá">Amapá</option>
+							  <option value="Amazonas">Amazonas</option>
+							  <option value="Bahia">Bahia</option>
+							  <option value="Ceará">Ceará</option>
+							  <option value="Distrito Federal">Distrito Federal</option>
+							  <option value="Espírito Santo">Espírito Santo</option>
+							  <option value="Goiás">Goiás</option>
+							  <option value="Maranhão">Maranhão</option>
+							  <option value="Mato Grosso">Mato Grosso</option>
+							  <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+							  <option value="Minas Gerais">Minas Gerais</option>
+							  <option value="Pará">Pará</option>
+							  <option value="Paraíba">Paraíba</option>
+							  <option value="Paraná">Paraná</option>
+							  <option value="Pernambuco">Pernambuco</option>
+							  <option value="Piauí">Piauí</option>
+							  <option value="Rio de Janeiro">Rio de Janeiro</option>
+							  <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+							  <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+							  <option value="Rondônia">Rondônia</option>
+							  <option value="Roraima">Roraima</option>
+							  <option value="Santa Catarina">Santa Catarina</option>
+							  <option value="São Paulo">São Paulo</option>
+							  <option value="Sergipe">Sergipe</option>
+							  <option value="Tocantins">Tocantins</option>
 							</select>
 		    			</div>
 					  </div>
@@ -128,7 +153,7 @@
 					  		<label for="asfasfaf"><?php echo form_label('Status:', 'Status') ?></label>
 					  	</div>			    
 					    <div class="col-md-3 col-xs-10">
-		      				<select class="form-control">
+		      				<select class="form-control" name="status">
 							  <option value="1">Precisando de Profissionais</option>
 							  <option value="2">Realizando Entrevistas</option>
 							  <option value="3">Realizando Contratações</option>
@@ -162,19 +187,19 @@
 					  	</div>			    
 					    <div class="col-md-6">
 		      				<label class="checkbox-inline">
-							  <input type="checkbox" id="vale_transporte" value="vale_transporte"> Vale Transporte
+							  <input type="checkbox" id="vale_transporte" name="vale_transporte"> Vale Transporte
 							</label>
 							<label class="checkbox-inline">
-							  <input type="checkbox" id="ticket" value="ticket"> Ticket Alimentação
+							  <input type="checkbox" id="ticket" name="ticket"> Ticket Alimentação
 							</label>
 							<label class="checkbox-inline">
-							  <input type="checkbox" id="plano_saude" value="plano_saude"> Plano de Saude
+							  <input type="checkbox" id="plano_saude" name="plano_saude"> Plano de Saude
 							</label>
 							<label class="checkbox-inline">
-							  <input type="checkbox" id="pl" value="pl"> Participação nos lucros
+							  <input type="checkbox" id="pl" name="pl"> Participação nos lucros
 							</label>
 							<label class="checkbox-inline">
-							  <input type="checkbox" id="outros" value="outros"> Outros
+							  <input type="checkbox" id="outros"name="outros"> Outros
 							</label>
 		    			</div>
 					  </div>		  
