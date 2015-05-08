@@ -2,11 +2,6 @@
 
 class  Oportunidades_model extends CI_Model{
 
-	// pega todos os alunos cadastrados
-	public function exibe_oportunidades(){
-		return $this->db->get('oportunidades');
-	}
-
 	/* função de seleção por ID para posteriormente ir pra tela de edição */
 	public function get_byid( $id = NULL ){
 		if( $id != NULL ){
@@ -41,6 +36,35 @@ class  Oportunidades_model extends CI_Model{
 			// e depois redireciona para /crud/create que vai estar esperando essa flashdata
 			$this->session->set_flashdata('cadastrook','Cadastro efetuado com sucesso');
 			redirect('empresa/novaOportunidade');
+		}
+	}
+
+		/* função de seleção por ID para posteriormente ir pra tela de edição */
+	public function oportunidadesCadastradas( $empresa = NULL ){
+		if( $empresa != NULL ){
+			/* seleciona no DB onde o campo ID == $id */
+			$this->db->where('empresa_responsavel',$empresa);
+			
+			/* mostra apenas 1 resultado, e TEM q ser 1 resultado pois ID é unico */
+			//$this->db->limit(1);
+			
+			/* pega a tabela aluno */
+			return $this->db->get('oportunidades');
+		}else{
+			return FALSE;			
+		}
+	}
+
+	public function quantidadeOportunidadesCadastradas( $empresa = NULL ){
+		if( $empresa != NULL ){
+
+			$this->db->where('empresa_responsavel',$empresa);
+					
+			/* pega a tabela aluno */
+			return $this->db->get('oportunidades')->num_rows();
+			
+		}else{
+			return FALSE;			
 		}
 	}
 

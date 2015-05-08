@@ -18,6 +18,15 @@
 
 	<div class="col-md-12">
 
+    <?php 
+        foreach ($infos as $info) {
+          $nome_empresa = $info->nome;
+        }
+
+        $oportunidades = $this->Oportunidades_model->oportunidadesCadastradas($nome_empresa)->result(); 
+
+    ?>
+
     <div class="panel panel-primary filterable">
       <div class="panel-heading">
         <h3 class="panel-title">Oportunidades</h3>

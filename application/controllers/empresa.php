@@ -26,13 +26,15 @@ class Empresa extends CI_Controller {
 
 		/* pega o Id_usuario que veio da sessio e joga pra variavel id */
 		$id = $this->session->userdata('id_usuario');
+		$nome = $this->session->userdata('nome');
 
 		// no EMAIL chama a função get_byid do MODEL login_model baseado na ID do usuário que veio do session 
 		$data = array(
 			'titulo' => 'Empresa - Painel',
 			'ondeesta' => 'Painel',
 			'descricao' => 'Você está no painel Principal!',
-			'infos' => $this->login_model->get_byid($id)->result()
+			'infos' => $this->login_model->get_byid($id)->result(),
+
 		);
 
 		$this->load->view('empresa_painel',$data);
@@ -47,13 +49,13 @@ class Empresa extends CI_Controller {
 		/* pega o Id_usuario que veio da sessio e joga pra variavel id */
 		$id = $this->session->userdata('id_usuario');
 
+
 		$dados = array(
 			'titulo' => 'Oportunidades - Meu Trampo',
 			'ondeesta' => 'Oportunidades de Emprego',
 			'descricao' => 'Você está na Página de oportunidades de emprego!',
 			'tela'=>'oportunidades',
-			'infos' => $this->login_model->get_byid($id)->result(),
-			'oportunidades'=>$this->Oportunidades_model->exibe_oportunidades()->result()
+			'infos' => $this->login_model->get_byid($id)->result()
 		);
 
 		$this->load->view('empresa_oportunidades',$dados);
