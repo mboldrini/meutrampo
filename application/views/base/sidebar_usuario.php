@@ -74,7 +74,7 @@
             </li>
 
             <li class="treeview">
-              <a href="<?php echo site_url('empresa/oportunidades') ?>">
+              <a href="<?php echo site_url('usuario/oportunidades') ?>">
                 <i class="fa fa-child"></i>
                 <span>Oportunidades</span>
               </a>

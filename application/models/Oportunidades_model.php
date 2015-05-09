@@ -79,4 +79,8 @@ class  Oportunidades_model extends CI_Model{
 
 	}
 
+	public function todasOportunidades(){
+		return $this->db->get('oportunidades');
+	}
+
 }
