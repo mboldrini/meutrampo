@@ -2,9 +2,9 @@
 
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b data-toggle="tooltip" data-placement="top" title="Versão Atual do projeto">Version</b> 1.1.1
+          <b data-toggle="tooltip" data-placement="top" title="Versão Atual do projeto">Version</b> 6.6.6
         </div>
-        <strong>Copyright &copy; 2015-2016 <a href="#" data-toggle="tooltip" data-placement="top" title="Responsável pelo projeto!">Matheus S. Boldrini</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2015-2016 <a href="#" data-toggle="tooltip" data-placement="top" title="HugaBuga Hei!">Meu Trampo</a>.</strong> All rights reserved.
       </footer>
      
     </div><!-- ./wrapper -->

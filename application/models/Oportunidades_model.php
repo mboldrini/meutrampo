@@ -39,16 +39,11 @@ class  Oportunidades_model extends CI_Model{
 		}
 	}
 
-		/* função de seleção por ID para posteriormente ir pra tela de edição */
 	public function oportunidadesCadastradas( $empresa = NULL ){
 		if( $empresa != NULL ){
 			/* seleciona no DB onde o campo ID == $id */
 			$this->db->where('empresa_responsavel',$empresa);
-			
-			/* mostra apenas 1 resultado, e TEM q ser 1 resultado pois ID é unico */
-			//$this->db->limit(1);
-			
-			/* pega a tabela aluno */
+		
 			return $this->db->get('oportunidades');
 		}else{
 			return FALSE;			
@@ -68,7 +63,6 @@ class  Oportunidades_model extends CI_Model{
 		}
 	}
 
-	/* função de seleção por ID para posteriormente ir pra tela de edição */
 	public function oportunidadesDisponiveis(){
 
 			$query = $this->db->get('oportunidades');
@@ -82,5 +76,20 @@ class  Oportunidades_model extends CI_Model{
 	public function todasOportunidades(){
 		return $this->db->get('oportunidades');
 	}
+
+	public function quantidadeEmpresasCadastradas(){
+
+		$tipo = 'empresa';
+
+		$query = $this->db->where('perfil',$tipo);
+
+		$query2 = $this->db->get('users');
+
+		$nn = $query2->num_rows();
+		
+		return $nn;
+
+	}
+
 
 }

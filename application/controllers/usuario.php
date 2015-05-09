@@ -25,7 +25,7 @@ class Usuario extends CI_Controller {
 		$nome = $this->session->userdata('nome');
 
 		$data = array(
-			'titulo' => 'Empresa - Painel',
+			'titulo' => 'Usuário - Painel',
 			'ondeesta' => 'Painel',
 			'descricao' => 'Você está no painel Principal!',
 			'infos' => $this->login_model->get_byid($id)->result()
