@@ -13,6 +13,16 @@
           <!-- Small boxes (Stat box) -->
           <div class="row">
 
+            <?php 
+              foreach ($infos as $info) {
+                $nome_usuario = $info->nome;
+              }
+
+
+              $oportunidades_disponiveis = $this->Oportunidades_model->oportunidadesDisponiveis();   
+
+            ?>
+
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
               <div class="small-box bg-aqua">
@@ -27,23 +37,13 @@
                 <a href="#" class="small-box-footer">Quem são? <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
-
-
-            <?php 
-              foreach ($infos as $info) {
-                $nome_empresa = $info->nome;
-              }
-
-              $oportunidades_cadastradas = $this->Oportunidades_model->quantidadeOportunidadesCadastradas($nome_empresa);
-              
-            ?>
   
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
               <div class="small-box bg-red">
                 <div class="inner">
-                  <h3><?php echo $oportunidades_cadastradas; ?></h3>                 
-                  <p>Oportunidades Cadastradas</p>
+                  <h3><?php echo $oportunidades_disponiveis; ?></h3>                 
+                  <p>Oportunidades Disponíveis</p>
                 </div>
                 <div class="icon">
                   <i class="fa fa-child"></i>
@@ -57,7 +57,7 @@
 
 	<div class="col-md-12">
 
-		asafasf
+		asafasf 
    
 		
 	</div>

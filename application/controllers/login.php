@@ -23,8 +23,8 @@ class Login extends CI_Controller
 			case 'empresa':
 				redirect(base_url().'empresa');
 				break;
-			case 'editor':
-				redirect(base_url().'editor');
+			case 'usuario':
+				redirect(base_url().'usuario');
 				break;	
 			case 'suscriptor':
 				redirect(base_url().'suscriptor');

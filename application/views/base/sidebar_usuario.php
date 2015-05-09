@@ -1,10 +1,10 @@
 
-  <body class="skin-purple sidebar-mini">
+  <body class="skin-green sidebar-mini">
     <div class="wrapper">
       
       <header class="main-header">
         <!-- Logo -->
-        <a href="<?php echo site_url('empresa/') ?>" class="logo">
+        <a href="<?php echo site_url('usuario/') ?>" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>M</b>T</span>
           <!-- logo for regular state and mobile devices -->
@@ -82,8 +82,8 @@
 
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-users"></i>
-                <span>Candidatos</span>
+                <i class="fa fa-archive"></i>
+                <span>Curriculum</span>
               </a>
             </li>
 

@@ -68,4 +68,15 @@ class  Oportunidades_model extends CI_Model{
 		}
 	}
 
+	/* função de seleção por ID para posteriormente ir pra tela de edição */
+	public function oportunidadesDisponiveis(){
+
+			$query = $this->db->get('oportunidades');
+
+			$num = $query->num_rows();
+			
+			return $num;
+
+	}
+
 }
