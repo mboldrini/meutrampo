@@ -37,10 +37,10 @@
       <table class="table">
         <thead>
           <tr class="filters">
-            <th><input type="text" class="form-control" placeholder="Código" disabled></th>
             <th><input type="text" class="form-control" placeholder="Cargo" disabled></th>
             <th><input type="text" class="form-control" placeholder="Empresa" disabled></th>
             <th><input type="text" class="form-control" placeholder="Estado" disabled></th>
+            <th><input type="text" class="form-control" placeholder="Status" disabled></th>
           </tr>
         </thead>
         
@@ -49,15 +49,11 @@
         <?php foreach ($oportunidades as $op) { ?>
           <tr>
             <td>
-              <a href="<?= base_url('empresa/perfilOportunidade/' . $op->id) ?>">
-                <?php echo $op->id ?>
-              </a>              
-            </td>
-            <td>
-              <a href="<?= base_url('empresa/perfilOportunidade/' . $op->id) ?>"><?php echo $op->cargo ?></a>
+              <a href="<?= base_url('empresa/perfilOportunidade/' . $op->id) ?>"><?php echo $op->cargo ?></a>            
             </td>
             <td><?php echo $op->empresa_responsavel ?></td>
             <td><?php echo $op->estado ?></td>
+            <td><?php echo $op->status ?></td>
             <td>
               <a href="<?= base_url('empresa/editarOportunidade/' . $op->id) ?>">
                 <button type="button" class="btn btn-primary fa fa-pencil-square-o">Editar</button>

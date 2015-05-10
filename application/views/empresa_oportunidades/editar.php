@@ -166,11 +166,16 @@
             </div>          
             <div class="col-md-3 col-xs-10">
               <select class="form-control" name="status">
-                <option value="1">Precisando de Profissionais</option>
-                <option value="2">Realizando Entrevistas</option>
-                <option value="3">Realizando Contratações</option>
-                <option value="4">Concluido</option>
-                <option value="5">Outros</option>
+               <?php
+                  foreach ($status as $status) {                   
+                    if($status->id == $query->status ){  ?>
+                      <option value="<?php echo $status->id ?>" selected><?php echo $status->status; ?></option>
+                     
+                   <?php }else{  ?>
+                      <option value="<?php echo $status->id ?>"><?php echo $status->status ?></option>                
+               <?php     }
+                  } 
+                ?>
             </select>
             </div>
           </div>
@@ -193,26 +198,60 @@
             </div>
           </div>
 
+          <?php 
+
+            if($query->vale_transporte == 'on'){
+              $vt = 'checked';
+            }else{
+              $vt = false;
+            }
+
+            if($query->ticket == 'on'){
+              $ticket = 'checked';
+            }else{
+              $ticket = false;
+            }
+
+            if($query->plano_saude == 'on'){
+              $plano_saude = 'checked';
+            }else{
+              $plano_saude = false;
+            }
+
+            if($query->pl == 'on'){
+              $pl = 'checked';
+            }else{
+              $pl = false;
+            }
+
+            if($query->outros == 'on'){
+              $outros = 'checked';
+            }else{
+              $outros = false;
+            }
+
+           ?>
+
           <div class="form-group">
             <div class="col-md-12">
               <label for="asfasfaf"><?php echo form_label('Benefícios da empresa:', 'Beneficios') ?></label>
             </div>          
             <div class="col-md-6">
-                <label class="checkbox-inline">
-              <input type="checkbox" id="vale_transporte" name="vale_transporte" valu> Vale Transporte
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="ticket" name="ticket"> Ticket Alimentação
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="plano_saude" name="plano_saude"> Plano de Saude
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="pl" name="pl"> Participação nos lucros
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="outros" name="outros"> Outros
-            </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="vale_transporte" name="vale_transporte" <?php echo $vt; ?> > Vale Transporte
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="ticket" name="ticket" <?php echo $ticket; ?> > Ticket Alimentação
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="plano_saude" name="plano_saude" <?php echo $plano_saude; ?> > Plano de Saude
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="pl" name="pl" <?php echo $pl; ?> > Participação nos lucros
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="outros" name="outros" <?php echo $outros; ?> > Outros
+              </label>
             </div>
           </div>      
 

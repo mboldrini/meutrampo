@@ -173,7 +173,8 @@ class Empresa extends CI_Controller {
 			'tela'=>'editar',	
 			'infos' => $this->login_model->get_byid($id)->result(),
 			'areas' => $this->Oportunidades_model->get_areas()->result(),
-			'estados' => $this->Oportunidades_model->get_estados()->result()
+			'estados' => $this->Oportunidades_model->get_estados()->result(),
+			'status' => $this->Oportunidades_model->get_status()->result()
 		);
 
 		$this->load->view('empresa_oportunidades',$dados);

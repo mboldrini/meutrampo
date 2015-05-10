@@ -29,7 +29,6 @@
             <i class="fa fa-question"></i>
           </a>
           <ul class="dropdown-menu">
-            <li class="header">Sobre o Sistema</li>
             <li>
               <!-- inner menu: contains the actual data -->
               <ul class="menu">

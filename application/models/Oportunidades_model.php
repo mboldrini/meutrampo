@@ -30,6 +30,12 @@ class  Oportunidades_model extends CI_Model{
 		return $estadosCadastrados;
 	}
 
+	public function get_status(){
+		$statusCadastrados = $this->db->get('status');
+
+		return $statusCadastrados;
+	}
+
 	/* essa aqui teoricamente é uma função que insere os dados no banco de dados
 		 o foda é que em momento algum o cara falou algo relacionado a tabela a ser inserida (se falou não lembro) */
 	public function do_insert($dados = NULL){

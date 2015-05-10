@@ -163,31 +163,26 @@ f <!-- Content Wrapper. Contains page content -->
                 		</tbody>
               		</table>
               
-              		<a href="#" class="btn btn-primary">Quero me Candidatar</a>
                 </div>
           	</div>
         </div>
         
         <div class="panel-footer">
-            <a data-original-title="Enviar Mensagem" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary">
-            	<i class="fa fa-envelope">Enviar Mensagem</i>
+
+          <div class="pull-right">
+
+            <a href="<?= base_url('empresa/editarOportunidade/' . $query->id) ?>">
+              <button type="button" class="btn btn-primary fa fa-pencil-square-o">Editar</button>
             </a>
 
-            <span class="pull-right">
+          </div>
 
-                <a href="#" data-original-title="Editar Oportunidade" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning">
-                	<i class="fa fa-pencil-square-o">Editar</i>
-                </a>
+          <a href="#">
+            <button type="button" class="btn btn-danger fa fa-trash-o">Excluir</button>
+          </a>
 
-                <a data-original-title="Remover Oportunidade" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger">
-                	<i class="fa fa-trash-o">Excluir</i>
-                </a>
-
-            </span>
-
-        </div>
-        
-      </div>
+        </div><!-- panel-footer-->
+    
     </div>
 
 		</div>
