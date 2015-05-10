@@ -11,12 +11,7 @@
           <span class="logo-lg"><b>Meu</b>Trampo</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
-        <?php 
-          foreach ($infos as $info) {
-            $email = $info->email;
-            $nome = $info->nome;
-          }
-        ?>
+    
 
         <nav class="navbar navbar-static-top" role="navigation">
            <div class="navbar-custom-menu">
@@ -46,6 +41,13 @@
             </li>
           </ul>
         </li>
+
+        <?php 
+          foreach ($infos as $info) {
+            $email = $info->email;
+            $nome = $info->nome;
+          }
+        ?>
 
         <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">

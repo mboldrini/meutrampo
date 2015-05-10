@@ -105,5 +105,14 @@ class  Oportunidades_model extends CI_Model{
 
 	}
 
+	public function quantidadeUsuariosCadastrados( ){
+
+		$usuarios = 'usuario';
+
+		$this->db->where('perfil',$usuarios);
+				
+		return $this->db->get('users')->num_rows();
+	}
+
 
 }

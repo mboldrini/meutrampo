@@ -19,6 +19,8 @@
               }
 
               $oportunidades_cadastradas = $this->Oportunidades_model->quantidadeOportunidadesCadastradas($nome_empresa);
+
+              $usuarios_cadastrados = $this->Oportunidades_model->quantidadeUsuariosCadastrados();
               
             ?>
 
@@ -26,13 +28,13 @@
               <!-- small box -->
               <div class="small-box bg-green">
                 <div class="inner">
-                  <h3>654</h3>
-                  <p>Candidatos Cadastrados</p>
+                  <h3><?php echo $usuarios_cadastrados; ?></h3>
+                  <p>Pessoas procurando oportunidades</p>
                 </div>
                 <div class="icon">
                   <i class="fa fa-users"></i>
                 </div>
-                <a href="#" class="small-box-footer">Quem são? <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="#" class="small-box-footer"  data-toggle="tooltip" data-placement="right" title="Essa função ainda não foi implementada!">Quem são? <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
   
