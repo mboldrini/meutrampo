@@ -53,13 +53,13 @@
         <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="<?php base_url(); ?>assets/img/bolsonaro.jpg" class="user-image" alt="User Image"/>
+            <img src="<?php base_url(); ?>/assets/img/bolsonaro.jpg" class="user-image" alt="User Image"/>
             <span class="hidden-xs"><?php echo $nome; ?></span>
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
             <li class="user-header">
-              <img src="<?php base_url(); ?>assets/img/bolsonaro.jpg" class="img-circle" alt="User Image" />
+              <img src="<?php base_url(); ?>/assets/img/bolsonaro.jpg" class="img-circle" alt="User Image" />
               <p>
                 <?php echo $nome; ?>
                 <small><?php echo $email; ?></small>
@@ -90,7 +90,7 @@
             <li class="header">Menu de Navegação</li>
 
             <li class="active treeview">
-              <a href="<?php echo site_url('empresa/') ?>">
+              <a href="<?php echo site_url('usuario/') ?>">
                 <i class="fa fa-dashboard"></i>
                 <span>Painel</span>
               </a>
@@ -99,7 +99,7 @@
             <li class="treeview">
               <a href="<?php echo site_url('usuario/oportunidades') ?>">
                 <i class="fa fa-child"></i>
-                <span>fnidades</span>
+                <span>Oportunidades</span>
               </a>
             </li> 
 

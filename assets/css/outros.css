@@ -1,4 +1,6 @@
-
+.fa-pencil-square-o:before, .fa-trash-o:before{
+    padding-right: 5px;
+}
 .filterable {
     margin-top: 15px;
 }

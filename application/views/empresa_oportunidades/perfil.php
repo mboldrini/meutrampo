@@ -1,4 +1,4 @@
- <!-- Content Wrapper. Contains page content -->
+f <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
         <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -64,7 +64,21 @@
 		                      	</tr>
 			                    <tr>
 			                    	<td>Status:</td>
-			                        <td><?php echo $query->status ?></td>
+			                        <td>
+                                <?php 
+                                  if($query->status == 1){
+                                    echo '<span class="label label-primary">Precisando de Profissionais</span>';
+                                  }else if($query->status == 2){
+                                    echo '<span class="label label-info">Realizando Entrevistas</span>';
+                                  }else if($query->status == 3){
+                                    echo '<span class="label label-warning">Realizando Contratações</span>';
+                                  }else if($query->status == 4){
+                                    echo '<span class="label label-danger">Essa Oportunidade não está mais disponível!</span>';
+                                  }else{
+                                    echo '<span class="label label-default">Outros!</span>';
+                                  }
+                                ?>   
+                              </td>
 			                    </tr>
                     			<tr>
 			                    	<td>Descrição:</td>

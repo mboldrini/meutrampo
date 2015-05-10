@@ -58,6 +58,14 @@
             </td>
             <td><?php echo $op->empresa_responsavel ?></td>
             <td><?php echo $op->estado ?></td>
+            <td>
+              <a href="<?= base_url('empresa/editarOportunidade/' . $op->id) ?>">
+                <button type="button" class="btn btn-primary fa fa-pencil-square-o">Editar</button>
+              </a>
+              <a href="#">
+                <button type="button" class="btn btn-danger fa fa-trash-o">Excluir</button>
+              </a>
+            </td>
           </tr>
         <?php } ?>
 

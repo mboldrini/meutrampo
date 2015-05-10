@@ -19,7 +19,15 @@ class  Oportunidades_model extends CI_Model{
 	}
 
 	public function get_areas(){
-		return $this->db->get('area');
+		$areasCadastradas = $this->db->get('area');
+		
+		return $areasCadastradas;
+	}
+
+	public function get_estados(){
+		$estadosCadastrados = $this->db->get('estados');
+		
+		return $estadosCadastrados;
 	}
 
 	/* essa aqui teoricamente é uma função que insere os dados no banco de dados
