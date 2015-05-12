@@ -31,6 +31,8 @@ f <!-- Content Wrapper. Contains page content -->
           * o row pega a linha que está retornando do Aluno_model */ 
           $query = $this->Oportunidades_model->get_byid($iduser)->row();
 
+         
+
         ?>
 			
 		<div class="panel panel-info">
@@ -55,7 +57,15 @@ f <!-- Content Wrapper. Contains page content -->
 		                    </tr>
                      		<tr>
                         		<td>Estado:</td>
-                        		<td><?php echo $query->estado ?></td>
+                        		<td>
+                              <?php 
+                                foreach ($estados as $est) {
+                                  if($query->estado == $est->sigla){
+                                    echo $est->estado;
+                                  }
+                                }
+                              ?>
+                            </td>
                       		</tr>                   
                      		<tr>
 		                        <tr>

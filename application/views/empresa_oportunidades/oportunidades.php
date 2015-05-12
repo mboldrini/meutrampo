@@ -34,6 +34,7 @@
             <button class="btn btn-default btn-xs btn-filter" data-toggle="tooltip" data-placement="top" title="Pesquisar por oportunidades especificas"><span class="fa fa-filter"></span> Filtrar</button>
           </div>
       </div>
+
       <table class="table">
         <thead>
           <tr class="filters">
@@ -45,15 +46,37 @@
         </thead>
         
         <tbody>
-    
+
         <?php foreach ($oportunidades as $op) { ?>
           <tr>
             <td>
               <a href="<?= base_url('empresa/perfilOportunidade/' . $op->id) ?>"><?php echo $op->cargo ?></a>            
             </td>
             <td><?php echo $op->empresa_responsavel ?></td>
-            <td><?php echo $op->estado ?></td>
-            <td><?php echo $op->status ?></td>
+            <td>
+              <?php 
+                foreach ($estados as $est) {
+                  if($op->estado == $est->sigla){
+                    echo $est->estado;
+                  }
+                }
+              ?>
+            </td>
+            <td>
+              <?php 
+                if($op->status == 1){
+                  echo '<span class="label label-primary">Precisando de Profissionais</span>';
+                }else if($op->status == 2){
+                  echo '<span class="label label-info">Realizando Entrevistas</span>';
+                }else if($op->status == 3){
+                  echo '<span class="label label-warning">Realizando Contratações</span>';
+                }else if($op->status == 4){
+                  echo '<span class="label label-danger">Essa Oportunidade não está mais disponível!</span>';
+                }else{
+                  echo '<span class="label label-default">Outros!</span>';
+                }
+              ?>   
+            </td>
             <td>
               <a href="<?= base_url('empresa/editarOportunidade/' . $op->id) ?>">
                 <button type="button" class="btn btn-primary fa fa-pencil-square-o">Editar</button>

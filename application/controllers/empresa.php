@@ -55,7 +55,8 @@ class Empresa extends CI_Controller {
 			'ondeesta' => 'Oportunidades de Emprego',
 			'descricao' => 'Você está na Página de oportunidades de emprego!',
 			'tela'=>'oportunidades',
-			'infos' => $this->login_model->get_byid($id)->result()
+			'infos' => $this->login_model->get_byid($id)->result(),
+			'estados' => $this->Oportunidades_model->get_estados()->result()
 		);
 
 		$this->load->view('empresa_oportunidades',$dados);
@@ -196,7 +197,8 @@ class Empresa extends CI_Controller {
 			'ondeesta' => 'Oportunidade de Emprego',
 			'descricao' => 'Você está visualizando uma oportunidade de Emprego!',
 			'tela'=>'perfil',
-			'infos' => $this->login_model->get_byid($id)->result(),
+			'infos' => $this->login_model->get_byid($id)->result(),			
+			'estados' => $this->Oportunidades_model->get_estados()->result()
 		);
 		$this->load->view('empresa_oportunidades',$dados);
 		
