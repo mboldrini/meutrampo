@@ -35,9 +35,7 @@ class  Oportunidades_model extends CI_Model{
 
 		return $statusCadastrados;
 	}
-
-	/* essa aqui teoricamente é uma função que insere os dados no banco de dados
-		 o foda é que em momento algum o cara falou algo relacionado a tabela a ser inserida (se falou não lembro) */
+	
 	public function do_insert($dados = NULL){
 		
 		// se a variavel $dados que veio do controller crud  for diferente de vazia, executa:
@@ -69,7 +67,6 @@ class  Oportunidades_model extends CI_Model{
 
 			$this->db->where('empresa_responsavel',$empresa);
 					
-			/* pega a tabela aluno */
 			return $this->db->get('oportunidades')->num_rows();
 			
 		}else{
