@@ -71,8 +71,6 @@ class Empresa extends CI_Controller {
 		}
 
 		/* FORM VALIDATION */
-
-
 		$this->form_validation->set_rules('empresa_responsavel','Empresa Responsável','trim|required|max_length[200]');
 
 		$this->form_validation->set_rules('cargo','Cargo','trim|required|max_length[200]');
@@ -102,7 +100,7 @@ class Empresa extends CI_Controller {
 			$dados = elements( array('empresa_responsavel','cargo','area','estado','email','status','descricao','vale_transporte','ticket','plano_saude','pl','outros'), $this->input->post());
 
 			//abre o MODEL Oportunidades_model, chama a função do_insert e envia a variavel $dados
-			$this->Oportunidades_model->do_insert($dados);
+			$this->Oportunidades_model->do_insert($dados,array('id'=>$this->input->post('idusuario') ) );
 		}
 
 		/* ./FORM VALIDATION */
@@ -130,8 +128,6 @@ class Empresa extends CI_Controller {
 		}
 
 		/* FORM VALIDATION */
-
-
 		$this->form_validation->set_rules('empresa_responsavel','Empresa Responsável','trim|required|max_length[200]');
 
 		$this->form_validation->set_rules('cargo','Cargo','trim|required|max_length[200]');
@@ -161,7 +157,7 @@ class Empresa extends CI_Controller {
 			$dados = elements( array('empresa_responsavel','cargo','area','estado','email','status','descricao','vale_transporte','ticket','plano_saude','pl','outros'), $this->input->post());
 
 			//abre o MODEL Oportunidades_model, chama a função do_insert e envia a variavel $dados
-			//$this->Oportunidades_model->do_insert($dados);
+			$this->Oportunidades_model->do_update($dados,array('id'=>$this->input->post('id') ) );
 		}
 		/* ./FORM VALIDATION */
 
@@ -169,9 +165,9 @@ class Empresa extends CI_Controller {
 		/* pega o Id_usuario que veio da sessio e joga pra variavel id */
 		$id = $this->session->userdata('id_usuario');
 		$dados = array(
-			'titulo' => 'Cadastrar Nova Oportunidade - Meu Trampo',
-			'ondeesta' => 'Nova Oportunidade de Emprego',
-			'descricao' => 'Você está na Página de Cadastro de Oportunidades de emprego!',
+			'titulo' => 'Editar Oportunidade - Meu Trampo',
+			'ondeesta' => 'Editar Oportunidade de Emprego',
+			'descricao' => 'Você está na Página de Edição das Oportunidades de emprego',
 			'tela'=>'editar',	
 			'infos' => $this->login_model->get_byid($id)->result(),
 			'areas' => $this->Oportunidades_model->get_areas()->result(),

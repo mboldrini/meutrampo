@@ -129,7 +129,7 @@
       </div>
       <div class="modal-body">
         Olá terraqueo!
-        <p>Esse ""Sistema"" foi desenvolvido por M _ T H _ S (<b>Complete o nome</b>) com o objetivo de Ser <strike>aprovado e concluir o curso</strike>
+        <p>Esse ""Sistema"" foi desenvolvido por M _ T H _ _ S (<b>Complete o nome</b>) com o objetivo de Ser <strike>aprovado e concluir o curso</strike>
           apenas um trabalho acadêmico de final de semestre, obviamente que esse projeto não está 100% funcional, foi feito apenas Algumas <strike>gambiarras</strike>
           funções como forma de completar os requisitos pedidos no projeto
         </p>

@@ -27,6 +27,17 @@
 
     ?>
 
+    <?php 
+      if($this->session->flashdata('edicaook')){
+        echo '<div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">
+            &times;
+          </span>
+        </button>'.$this->session->flashdata('edicaook').'</div>';
+      }
+   ?>
+
     <div class="panel panel-primary filterable">
       <div class="panel-heading">
         <h3 class="panel-title">Oportunidades</h3>

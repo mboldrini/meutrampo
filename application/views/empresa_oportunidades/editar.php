@@ -47,13 +47,13 @@
         ?>
 
         <?php 
-          if($this->session->flashdata('cadastrook')){
+          if($this->session->flashdata('edicaook')){
             echo '<div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">
                 &times;
               </span>
-            </button>'.$this->session->flashdata('cadastrook').'</div>';
+            </button>'.$this->session->flashdata('edicaook').'</div>';
           }
          ?>
 
@@ -61,9 +61,12 @@
           foreach ($infos as $info) {
             $nome = $info->nome;
           }
+
         ?>
 
-        <?php echo form_open('empresa/novaOportunidade',array('class'=>'form-horizontal'))?>
+        <?php echo form_open('empresa/editarOportunidade',array('class'=>'form-horizontal'))?>
+
+          <?php echo form_hidden('id',$query->id);  ?>
 
           <div class="form-group">
             <div class="col-md-12">
@@ -86,6 +89,7 @@
 
           <!--<option value="<?php echo $area->area ?>"><?php echo $area->area ?></option>
 -->        
+
           <div class="form-group">
             <div class="col-md-12">
               <label for="area_atuacao"><?php echo form_label('Área de atuação:', 'Área de atuação') ?></label>

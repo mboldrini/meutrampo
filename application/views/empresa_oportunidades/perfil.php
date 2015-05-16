@@ -39,7 +39,6 @@ f <!-- Content Wrapper. Contains page content -->
             <div class="panel-heading">
               <h3 class="panel-title"><?php echo $query->empresa_responsavel ?></h3>
             </div>
-
     
         <div class="panel-body">
           	<div class="row">              

@@ -51,6 +51,20 @@ class  Oportunidades_model extends CI_Model{
 		}
 	}
 
+	public function do_update($dados = NULL, $condicao = NULL){
+		if ($dados != NULL && $condicao != NULL){
+
+			/* atualiza o banco de dados aluno com os $dados usando a $condição */
+			$this->db->update('oportunidades',$dados,$condicao);
+
+			/* retorna para a view de alunos cadastrados uma mensagem  de edição ok */
+			$this->session->set_flashdata('edicaook','Uhul! Uma oportunidade foi editada! - <div class="fa fa-smile-o"></div>');
+
+			/* ao terminar de editar o registro vai para a tela de alunos cadastrados */
+			redirect('empresa/oportunidades');
+		}
+	}
+
 	public function oportunidadesCadastradas( $empresa = NULL ){
 		if( $empresa != NULL ){
 			/* seleciona no DB onde o campo ID == $id */
