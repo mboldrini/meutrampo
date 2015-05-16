@@ -38,6 +38,17 @@
       }
    ?>
 
+   <?php 
+      if($this->session->flashdata('exclusaook')){
+        echo '<div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">
+            &times;
+          </span>
+        </button>'.$this->session->flashdata('exclusaook').'</div>';
+      }
+   ?>
+
     <div class="panel panel-primary filterable">
       <div class="panel-heading">
         <h3 class="panel-title">Oportunidades</h3>
@@ -92,7 +103,7 @@
               <a href="<?= base_url('empresa/editarOportunidade/' . $op->id) ?>">
                 <button type="button" class="btn btn-primary fa fa-pencil-square-o">Editar</button>
               </a>
-              <a href="#">
+              <a href="<?= base_url('empresa/excluirOportunidade/' . $op->id) ?>">
                 <button type="button" class="btn btn-danger fa fa-trash-o">Excluir</button>
               </a>
             </td>

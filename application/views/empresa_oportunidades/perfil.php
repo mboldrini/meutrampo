@@ -29,13 +29,11 @@ f <!-- Content Wrapper. Contains page content -->
           * chama o model Aluno_model,
           * chama a função get_byid( ) - passa a variavel de identificação do usuário a ser editado
           * o row pega a linha que está retornando do Aluno_model */ 
-          $query = $this->Oportunidades_model->get_byid($iduser)->row();
-
-         
+          $query = $this->Oportunidades_model->get_byid($iduser)->row();         
 
         ?>
 			
-		<div class="panel panel-info">
+		    <div class="panel panel-info">
             <div class="panel-heading">
               <h3 class="panel-title"><?php echo $query->empresa_responsavel ?></h3>
             </div>
@@ -186,7 +184,7 @@ f <!-- Content Wrapper. Contains page content -->
 
           </div>
 
-          <a href="#">
+          <a href="<?= base_url('empresa/excluirOportunidade/' . $query->id) ?>">
             <button type="button" class="btn btn-danger fa fa-trash-o">Excluir</button>
           </a>
 

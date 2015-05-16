@@ -180,6 +180,36 @@ class Empresa extends CI_Controller {
 
 	}
 
+	public function excluirOportunidade(){
+
+		if($this->session->userdata('perfil') == FALSE || $this->session->userdata('perfil') != 'empresa'){
+			redirect(base_url().'login');
+		}
+
+		// Se a validação do formulário estiver tudo OK, executa a função
+		if ( $this->input->post('id') > 0) {
+			$this->Oportunidades_model->do_delete( array('id'=>$this->input->post('id') ) );
+		}
+
+		/* pega o Id_usuario que veio da sessio e joga pra variavel id */
+		$id = $this->session->userdata('id_usuario');
+		$dados = array(
+			'titulo' => 'Excluir Oportunidade - Meu Trampo',
+			'ondeesta' => 'Excluir Oportunidade de Emprego',
+			'descricao' => 'Você está na Página de Exclusão de uma Oportunidade de emprego',
+			'tela'=>'excluir',	
+			'infos' => $this->login_model->get_byid($id)->result(),
+			'areas' => $this->Oportunidades_model->get_areas()->result(),
+			'estados' => $this->Oportunidades_model->get_estados()->result(),
+			'status' => $this->Oportunidades_model->get_status()->result()
+		);
+		$this->load->view('empresa_oportunidades',$dados);
+
+	}
+
+
+
+
 	public function perfilOportunidade(){
 
 		if($this->session->userdata('perfil') == FALSE || $this->session->userdata('perfil') != 'empresa'){

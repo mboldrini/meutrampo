@@ -13,7 +13,6 @@
 		<div class="col-md-12">
 
       <?php 
-
           /* essa é uma variavel de idendificação do usuário a ser editado
           * essa variavel recebe o valor por meio da url, 
           * já o segment eu não faço a minima ideia mas ta funcionando */
@@ -30,8 +29,7 @@
           * chama a função get_byid( ) - passa a variavel de identificação do usuário a ser editado
           * o row pega a linha que está retornando do Aluno_model */ 
           $query = $this->Oportunidades_model->get_byid($iduser)->row();
-
-        ?>
+      ?>
 
 
         <?php echo validation_errors(
@@ -57,11 +55,21 @@
           }
          ?>
 
+         <?php 
+          if($this->session->flashdata('exclusaook')){
+            echo '<div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">
+                &times;
+              </span>
+            </button>'.$this->session->flashdata('exclusaook').'</div>';
+          }
+         ?>
+
         <?php 
           foreach ($infos as $info) {
             $nome = $info->nome;
           }
-
         ?>
 
         <?php echo form_open('empresa/editarOportunidade',array('class'=>'form-horizontal'))?>
@@ -126,6 +134,7 @@
               ?>
             </div>
           </div> 
+
           <div class="form-group">
             <div class="col-md-12">
               <label for="estado"><?php echo form_label('Estado:', 'Estado') ?></label>
@@ -261,10 +270,10 @@
 
           <div class="form-group col-md-8">
             <div class=" col-md-4">  
-              <?php echo form_reset('', 'Cancelar','class="btn btn-danger"') ?>           
+              <a href="<?php echo base_url('empresa/oportunidades'); ?>" class="btn btn-default">Cancelar</a>         
             </div>
             <div class="float-right">
-              <?php echo form_submit('', 'Cadastrar Oportunidade','class="btn btn-success"') ?>
+              <?php echo form_submit('', 'Editar essa Oportunidade','class="btn btn-success"') ?>
             </div>
           </div> 
 

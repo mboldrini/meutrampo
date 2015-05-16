@@ -65,6 +65,17 @@ class  Oportunidades_model extends CI_Model{
 		}
 	}
 
+	public function do_delete($condicao = NULL){
+		if ($condicao != NULL) {
+			$this->db->delete('oportunidades',$condicao);
+
+			$this->session->set_flashdata('exclusaook','Você excluiu uma oportunidade! - <div class="fa fa-smile-o"></div>');
+
+			redirect('empresa/oportunidades');
+
+		}
+	}
+
 	public function oportunidadesCadastradas( $empresa = NULL ){
 		if( $empresa != NULL ){
 			/* seleciona no DB onde o campo ID == $id */
