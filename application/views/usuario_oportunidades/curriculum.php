@@ -13,6 +13,7 @@
 <section class="content">
 	<div class="col-md-12">
 
+    <?php echo $error;?>
 
 <?php echo form_open_multipart('usuario/do_upload');?>
 

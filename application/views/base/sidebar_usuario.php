@@ -103,7 +103,7 @@
             </li> 
 
             <li class="treeview">
-              <a href="<?php echo site_url('usuario/curriculum') ?>">
+              <a href="<?php echo site_url('upload') ?>">
                 <i class="fa fa-archive"></i>
                 <span>Curriculum</span>
               </a>

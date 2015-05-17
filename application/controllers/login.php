@@ -26,9 +26,9 @@ class Login extends CI_Controller
 			case 'usuario':
 				redirect(base_url().'usuario');
 				break;	
-			case 'suscriptor':
-				redirect(base_url().'suscriptor');
-				break;
+			//case 'suscriptor':
+				//redirect(base_url().'suscriptor');
+			//	break;
 			default:		
 				$data['titulo'] = 'Login';
 				$this->load->view('login_view',$data);

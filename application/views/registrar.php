@@ -13,7 +13,7 @@
 
 
   </head>
-  <body>
+  <body class="site">
 
     <script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
 <!-- This is a very simple parallax effect achieved by simple CSS 3 multiple backgrounds, made by http://twitter.com/msurguy -->

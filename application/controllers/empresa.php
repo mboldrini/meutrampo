@@ -5,21 +5,18 @@ class Empresa extends CI_Controller {
 	
 	public function __construct() {
 		parent::__construct();
-		$this->load->library(array('session'));
-		$this->load->helper(array('url'));
+		$this->load->library(array('session', 'form_validation','form'));
+		$this->load->helper(array('url','array'));
 
 		/* validação dos formulários */
-		$this->load->library('form_validation');
 
 		$this->load->model('login_model');
 
 		$this->load->model('Oportunidades_model');
 
-		$this->load->helper('array');
 	}
 	
-	public function index()
-	{	
+	public function index(){	
 		/* verifica se o perfil do usuário tem acesso a essa parte */
 		if($this->session->userdata('perfil') == FALSE || $this->session->userdata('perfil') != 'empresa'){
 			redirect(base_url().'login');
@@ -72,27 +69,16 @@ class Empresa extends CI_Controller {
 
 		/* FORM VALIDATION */
 		$this->form_validation->set_rules('empresa_responsavel','Empresa Responsável','trim|required|max_length[200]');
-
 		$this->form_validation->set_rules('cargo','Cargo','trim|required|max_length[200]');
-
 		$this->form_validation->set_rules('area','Área de Atuação','trim|required|max_length[200]');
-
 		$this->form_validation->set_rules('estado','Estado','trim|required|max_length[200]');
-
 		$this->form_validation->set_rules('email','Email','trim|required|max_length[200]');
-
 		$this->form_validation->set_rules('status','Status','trim|required|max_length[200]');
-
 		$this->form_validation->set_rules('descricao','Descricao','trim|max_length[255]');
-
 		$this->form_validation->set_rules('vale_transporte','Vale Transporte','trim|max_length[20]');
-
 		$this->form_validation->set_rules('ticket','Ticket','trim|max_length[20]');
-
 		$this->form_validation->set_rules('plano_saude','Plano de Saúde','trim|max_length[20]');
-
 		$this->form_validation->set_rules('pl','Participação nos Lucros','trim|max_length[20]');
-
 		$this->form_validation->set_rules('outros','Outros','trim|max_length[20]');
 
 		// Se a validação do formulário estiver tudo OK, executa a função
@@ -129,27 +115,16 @@ class Empresa extends CI_Controller {
 
 		/* FORM VALIDATION */
 		$this->form_validation->set_rules('empresa_responsavel','Empresa Responsável','trim|required|max_length[200]');
-
 		$this->form_validation->set_rules('cargo','Cargo','trim|required|max_length[200]');
-
 		$this->form_validation->set_rules('area','Área de Atuação','trim|required|max_length[200]');
-
 		$this->form_validation->set_rules('estado','Estado','trim|required|max_length[200]');
-
 		$this->form_validation->set_rules('email','Email','trim|required|max_length[200]');
-
 		$this->form_validation->set_rules('status','Status','trim|required|max_length[200]');
-
 		$this->form_validation->set_rules('descricao','Descricao','trim|max_length[255]');
-
 		$this->form_validation->set_rules('vale_transporte','Vale Transporte','trim|max_length[20]');
-
 		$this->form_validation->set_rules('ticket','Ticket','trim|max_length[20]');
-
 		$this->form_validation->set_rules('plano_saude','Plano de Saúde','trim|max_length[20]');
-
 		$this->form_validation->set_rules('pl','Participação nos Lucros','trim|max_length[20]');
-
 		$this->form_validation->set_rules('outros','Outros','trim|max_length[20]');
 
 		// Se a validação do formulário estiver tudo OK, executa a função
@@ -230,6 +205,7 @@ class Empresa extends CI_Controller {
 		$this->load->view('empresa_oportunidades',$dados);
 		
 	}
+
 
 
 
