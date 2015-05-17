@@ -27,7 +27,19 @@
         	</div>
           <div class="panel-body">
 
-            <?=form_open(base_url().'login/new_user',array('role'=>'form','style'=>'display:block'))?>
+            <?=form_open(base_url().'registrar',array('role'=>'form','style'=>'display:block'))?>
+
+            <?php echo validation_errors(
+              '<div class="alert alert-danger alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">
+                    &times;
+                  </span>
+                </button>'
+	            ,
+	              '</div>'
+	            ); 
+          	?>
 
               <fieldset>
 
@@ -46,12 +58,12 @@
 				    <div class="col-md-12">
 	      				<?php echo form_input(
 	                        array(
-	                          'name'=>'login',
+	                          'name'=>'username',
 	                          'type'=>'text',
 	                          'placeholder'=>'Seu Login de Acesso'
 	                        ),
 	                        
-	                        set_value('login'),
+	                        set_value('username'),
 	                          'class="form-control"')
 	                      ?>
 	    			</div>
@@ -94,12 +106,12 @@
 				    <div class="col-md-12">
 	      				<?php echo form_input(
 	                        array(
-	                          'name'=>'senha',
+	                          'name'=>'password',
 	                          'type'=>'password',
 	                          'placeholder'=>'Sua Senha'
 	                        ),
 	                        
-	                        set_value('senha'),
+	                        set_value('password'),
 	                          'class="form-control"')
 	                      ?>
 	    			</div>

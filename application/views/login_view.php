@@ -30,6 +30,7 @@
 
             <h3 class="panel-title">Login</h3>
         </div>
+
           <div class="panel-body">
 
             <?=form_open(base_url().'login/new_user',array('role'=>'form','style'=>'display:block'))?>
