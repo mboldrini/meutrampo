@@ -80,7 +80,9 @@ class Usuario extends CI_Controller {
 			redirect(base_url().'login');
 		}
 
-				
+
+		
+
 
 		$id = $this->session->userdata('id_usuario');
 		$dados = array(
@@ -93,7 +95,6 @@ class Usuario extends CI_Controller {
 		$this->load->view('usuario_oportunidades',$dados);
 		
 	}
-
 
 
 }
