@@ -136,5 +136,20 @@ class  Oportunidades_model extends CI_Model{
 		return $this->db->get('users')->num_rows();
 	}
 
+	public function salva_curriculum($dados = NULL){
+		
+		// se a variavel $dados que veio do controller crud  for diferente de vazia, executa:
+		if($dados != NULL){
+
+			//insere na tabela curso_ci a variavel $dados
+			$this->db->insert('curriculum',$dados);
+
+			// retorna uma flashdata de nome cadastrook e valor {} 
+			// e depois redireciona para /crud/create que vai estar esperando essa flashdata
+			//$this->session->set_flashdata('cadastrook','Cadastro efetuado com sucesso');
+			//redirect('empresa/novaOportunidade');
+		}
+	}
+
 
 }

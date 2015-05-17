@@ -83,4 +83,6 @@ public function new_user()
 		$this->session->sess_destroy();
 		$this->index();
 	}
+
+
 }

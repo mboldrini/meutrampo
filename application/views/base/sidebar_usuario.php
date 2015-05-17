@@ -52,13 +52,13 @@
         <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="<?php base_url(); ?>/assets/img/bolsonaro.jpg" class="user-image" alt="User Image"/>
+            <img src="http://upload.wikimedia.org/wikipedia/commons/d/df/Jair_Bolsonaro.JPG" class="user-image" alt="User Image"/>
             <span class="hidden-xs"><?php echo $nome; ?></span>
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
             <li class="user-header">
-              <img src="<?php base_url(); ?>/assets/img/bolsonaro.jpg" class="img-circle" alt="User Image" />
+              <img src="http://upload.wikimedia.org/wikipedia/commons/d/df/Jair_Bolsonaro.JPG" class="img-circle" alt="User Image" />
               <p>
                 <?php echo $nome; ?>
                 <small><?php echo $email; ?></small>
@@ -103,7 +103,7 @@
             </li> 
 
             <li class="treeview">
-              <a href="#">
+              <a href="<?php echo site_url('usuario/curriculum') ?>">
                 <i class="fa fa-archive"></i>
                 <span>Curriculum</span>
               </a>

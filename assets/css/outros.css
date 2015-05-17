@@ -125,3 +125,33 @@
     background-color: #1CA347;
     border-color: #1CA347;
 }
+
+
+
+
+
+
+
+
+
+body{
+    background: url(http://mymaplist.com/img/parallax/back.png);
+    background-color: #444;
+    background: url(http://mymaplist.com/img/parallax/pinlayer2.png),url(http://mymaplist.com/img/parallax/pinlayer1.png),url(http://mymaplist.com/img/parallax/back.png);    
+}
+
+.vertical-offset-100{
+    padding-top:100px;
+}
+
+.fg-registro label{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.fg-registro-topo label{
+    margin-bottom: 0px;
+}
+.btn-registro{
+    margin-top: 10px !important;
+    margin-bottom: 10px;
+}

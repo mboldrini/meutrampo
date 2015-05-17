@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-	<html lang="es">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<!-- Bootstrap 3.3.4 -->
+  <html lang="pt-br">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Bootstrap 3.3.4 -->
     <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> 
     <link href="<?php echo base_url();?>assets/css/outros.css" rel="stylesheet" type="text/css" />
 
@@ -10,127 +10,84 @@
     <script src="<?php echo base_url();?>assets/js/login.js" type="text/javascript"></script>  
 
 
-	</head>
-	<body>
-	<?php
-	$username = array('name' => 'username', 'placeholder' => 'nombre de usuario');
-	$password = array('name' => 'password',	'placeholder' => 'introduce tu password');
-	$submit = array('name' => 'submit', 'value' => 'Iniciar sesión', 'title' => 'Iniciar sesión');
-	?>
+  </head>
+  <body>
 
-	<div class="container">
-    	<div class="row painel-delogin">
-			<div class="col-md-6 col-md-offset-3">
-				<div class="panel panel-login">
-					
-					<div class="panel-heading">
-						<div class="row">
-							<div class="col-xs-6">
-								<a href="#" class="active" id="login-form-link">Login</a>
-							</div>
-							<div class="col-xs-6">
-								<a href="#" id="register-form-link">Registrar</a>
-							</div>
-						</div>
-						<hr>
-					</div>
+    <script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
+<!-- This is a very simple parallax effect achieved by simple CSS 3 multiple backgrounds, made by http://twitter.com/msurguy -->
 
-					<div class="panel-body">
-						<div class="row">
+<div class="container">
+    <div class="row vertical-offset-100">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
 
-							<?php
-							$username = array('name' => 'username', 'placeholder' => 'nombre de usuario');
-							$password = array('name' => 'password',	'placeholder' => 'introduce tu password');
-							$submit = array('name' => 'submit', 'value' => 'Iniciar sesión', 'title' => 'Iniciar sesión');
-							?>
+            <?php
+              $username = array('name' => 'username', 'placeholder' => 'seu login');
+              $password = array('name' => 'password', 'placeholder' => 'sua senha');
+              $submit = array('name' => 'submit', 'value' => 'Iniciar Sessão', 'title' => 'Iniciar Sessão');
+            ?>
 
+            <h3 class="panel-title">Login</h3>
+        </div>
+          <div class="panel-body">
 
-							<div class="col-lg-12">
+            <?=form_open(base_url().'login/new_user',array('role'=>'form','style'=>'display:block'))?>
 
-								<?=form_open(base_url().'login/new_user',array('role'=>'form','style'=>'display:block'))?>
-																	
-									<div class="form-group">										
-										<!--<?=form_input($username)?>	-->
-										<?php echo form_input(
-					                        array(
-					                          'name'=>'username',
-					                          'type'=>'text',
-					                          'placeholder'=>'Seu Login'
-					                        ),
-				                        
-				                        	set_value('username'),
-				                          		'class="form-control"')
-				                      	?>									
-										<p><?=form_error('username')?></p>										
-									</div>
+              <fieldset>
 
-									<div class="form-group">
-										<!--<?=form_password($password)?>-->
-										<?php echo form_input(
-					                        array(
-					                          'name'=>'password',
-					                          'type'=>'password',
-					                          'placeholder'=>'Sua Senha'
-					                        ),
-				                        
-				                        	set_value('password'),
-				                          		'class="form-control"')
-				                      	?>	
-										<p><?=form_error('password')?></p>										
-									</div>
+                <div class="form-group">
+                  <?php echo form_input(
+                    array(
+                      'name'=>'username',
+                      'type'=>'text',
+                      'placeholder'=>'Seu Login'
+                    ),
+                  
+                    set_value('username'),
+                        'class="form-control"')
+                  ?>        
+                </div>
 
-									<?=form_hidden('token',$token)?>
+                <div class="form-group">
+                  <?php echo form_input(
+                    array(
+                      'name'=>'password',
+                      'type'=>'password',
+                      'placeholder'=>'Sua Senha'
+                    ),
+                  
+                    set_value('password'),
+                        'class="form-control"')
+                  ?>  
+                </div>
+                <?=form_hidden('token',$token)?>
 
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<?php echo form_submit('submit', 'Entrar','class="form-control btn btn-login"') ?>												
-											</div>
-										</div>
-									</div>
+                <?php echo form_submit('submit', 'Entrar','class="form-control btn btn-login btn-block"') ?>  
 
-								<?=form_close()?>
+                <?=form_close()?>
 
-								<?php 
-									if($this->session->flashdata('usuario_incorrecto')){
-								?>
-								<p><?=$this->session->flashdata('usuario_incorrecto')?></p>
-								<?php
-									}
-								?>
+                <?php 
+                  if($this->session->flashdata('usuario_incorrecto')){
+                ?>
+                <p><?=$this->session->flashdata('usuario_incorrecto')?></p>
+                <?php
+                  }
+                ?>
+                  
+               
 
+              </fieldset>
 
+              <a href="<?php echo base_url('registrar') ?>">REGISTRAR</a>
 
-								<form id="register-form" action="#" method="post" role="form" style="display: none;">
-									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
-									</div>
-									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
-									</div>
-									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
-									</div>
-									<div class="form-group">
-										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
-											</div>
-										</div>
-									</div>
-								</form>
+            </form>
 
-							</div>
-						</div>
-					</div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-				</div>
-			</div>
-		</div>
-	</div>
-
-	</body>
+  </body>
 </html>
