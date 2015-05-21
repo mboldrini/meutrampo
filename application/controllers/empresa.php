@@ -17,6 +17,7 @@ class Empresa extends CI_Controller {
 	}
 	
 	public function index(){	
+		
 		/* verifica se o perfil do usuário tem acesso a essa parte */
 		if($this->session->userdata('perfil') == FALSE || $this->session->userdata('perfil') != 'empresa'){
 			redirect(base_url().'login');
