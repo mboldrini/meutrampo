@@ -159,6 +159,7 @@ class  Oportunidades_model extends CI_Model{
 
 			//insere na tabela curso_ci a variavel $dados
 			$this->db->insert('curriculum',$dados);
+
 		}		
 	}
 
@@ -170,6 +171,29 @@ class  Oportunidades_model extends CI_Model{
 			return $this->db->get('curriculum');
 		}else{
 			return FALSE;			
+		}
+	}
+
+	public function exibeOcurriculum( $id = NULL ){
+		if( $id != NULL ){
+
+			$this->db->where('id',$id);
+			
+			/* mostra apenas 1 resultado, e TEM q ser 1 resultado pois ID é unico */
+			$this->db->limit(1);
+			
+			return $this->db->get('curriculum');
+		}else{
+			return FALSE;			
+		}
+	}
+
+	public function excluirCurriculum($condicao = NULL){
+		if ($condicao != NULL) {
+			$this->db->delete('curriculum',$condicao);	
+			redirect('upload/');	
+		}else{
+			return false;
 		}
 	}
 

@@ -37,7 +37,8 @@ class Upload extends CI_Controller {
 
         }
 
-         public function enviarCurriculum(){
+
+        public function enviarCurriculum(){
 
             /* não é um usuário cadastrado? nem tenta! pois você não vai conseguir acessar essa função! eahuaeuhae */
             if($this->session->userdata('perfil') == FALSE || $this->session->userdata('perfil') != 'usuario'){
@@ -87,8 +88,8 @@ class Upload extends CI_Controller {
                 $error = array('error' => $this->upload->display_errors());
 
                 $data = array(
-                    'titulo' => 'DEU RUIM - Painel',
-                    'ondeesta' => 'DEU RUIM',
+                    'titulo' => 'Enviar Curriculum - Painel',
+                    'ondeesta' => 'Ops! Algo de errado aconteceu!',
                     'descricao' => '',
                     'upload_data' => $this->upload->data(),
                     'tela'=>'erro',
@@ -116,6 +117,54 @@ class Upload extends CI_Controller {
 
         }
 
+
+        public function exibeCurriculum(){
+
+            /* não é um usuário cadastrado? nem tenta! pois você não vai conseguir acessar essa função! eahuaeuhae */
+            if($this->session->userdata('perfil') == FALSE || $this->session->userdata('perfil') != 'usuario'){
+                redirect(base_url().'login');
+            }
+
+            $id = $this->session->userdata('id_usuario');
+            $nome = $this->session->userdata('nome');
+
+            $this->load->view(
+                'curriculum',
+                array(
+                    'error' => ' ',
+                    'titulo' => 'Excluir Curriculum - Painel',
+                    'ondeesta' => 'Excluir Curriculum',
+                    'descricao' => '',
+                    'tela'=>'exibeCurriculum',
+                    'infos' => $this->login_model->get_byid($id)->result()
+                ));
+
+        }
+
+        public function excluirCurriculum(){
+
+            /* não é um usuário cadastrado? nem tenta! pois você não vai conseguir acessar essa função! eahuaeuhae */
+            if($this->session->userdata('perfil') == FALSE || $this->session->userdata('perfil') != 'usuario'){
+                redirect(base_url().'login');
+            }
+
+            // Se a validação do formulário estiver tudo OK, executa a função
+            if ( $this->input->post('id') > 0) {
+                $this->Oportunidades_model->excluirCurriculum( array('id'=>$this->input->post('id') ) );
+            }
+
+            /* pega o Id_usuario que veio da sessio e joga pra variavel id */
+            $id = $this->session->userdata('id_usuario');
+            $dados = array(
+                'titulo' => 'Excluir',
+                'ondeesta' => 'Excluir',
+                'descricao' => 'XXX',
+                'tela'=>'cadastrado',  
+                'infos' => $this->login_model->get_byid($id)->result()
+            );
+            $this->load->view('curriculum',$dados);
+
+        }
 
 
 }

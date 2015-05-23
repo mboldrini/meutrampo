@@ -29,6 +29,8 @@
 
 			<table class="table table-striped">
 
+				<p>Obs: para evitar problemas, mantenha apenas UM curriculum cadastrado!</p>
+
 				<thead>
 	                <tr>
 	                	<th>ID</th>
@@ -40,9 +42,9 @@
 				<?php foreach ($meuCurriculum as $key): ?>
 					<tr>
 						<td><?php echo $key->id; ?></td>
-						<td><a href="<?php echo base_url( 'uploads/' . $key->nomearquivo ); ?>">Meu Curriculum</a></td>
+						<td><a href="<?php echo base_url( 'uploads/' . $key->nomearquivo ); ?>" target="_blank">Meu Curriculum</a></td>
 						<td>
-							<a href="#" class="btn btn-danger fa fa-trash-o">Excluir</a>
+							<a href="<?= base_url('upload/exibeCurriculum/' . $key->id) ?>" class="btn btn-danger fa fa-trash-o">Excluir</a>
 						</td>
 					</tr>
 				<?php endforeach ?>

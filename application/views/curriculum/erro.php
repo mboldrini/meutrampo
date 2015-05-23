@@ -12,7 +12,13 @@
 	<div class="row">
 		<div class="col-md-12">
 
-			DEU RUIM
+			<h4>Acho que você esqueceu de enviar o arquivo com o seu Curriculum!</h4>
+			<h6>Obs: somente arquivos .PDF podem ser enviados!</h6>
+
+			<br><br>
+			
+			<a href="<?php echo base_url('upload'); ?>" class="btn btn-primary">Ok, Entendi!</a>
+
     	</div><!-- ./col-md-12 -->
 	</div>
 </section>		

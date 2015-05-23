@@ -5,8 +5,9 @@ class Empresa extends CI_Controller {
 	
 	public function __construct() {
 		parent::__construct();
-		$this->load->library(array('session', 'form_validation','form'));
-		$this->load->helper(array('url','array'));
+		$this->load->library(array('session', 'form_validation'));
+		$this->load->helper('form');
+		$this->load->helper(array('url','array','form'));
 
 		/* validação dos formulários */
 

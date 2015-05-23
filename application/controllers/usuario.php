@@ -82,25 +82,5 @@ class Usuario extends CI_Controller {
 		
 	}
 
-	public function ASFASF(){
-
-		/* não é um usuário cadastrado? nem tenta! pois você não vai conseguir acessar essa função! eahuaeuhae */
-        if($this->session->userdata('perfil') == FALSE || $this->session->userdata('perfil') != 'usuario'){
-            redirect(base_url().'login');
-        }
-
-
-		$id = $this->session->userdata('id_usuario');
-		$dados = array(
-			'titulo' => 'Meu Curriculum - Meu Trampo',
-			'ondeesta' => 'Meu Curriculum',
-			'descricao' => 'Essa é a página onde você envia o seu curriculum!',
-			'tela'=>'curriculum',
-			'infos' => $this->login_model->get_byid($id)->result(),
-			'error'=>''
-		);
-		$this->load->view('usuario_oportunidades',$dados);
-	}
-
 
 }

@@ -262,7 +262,9 @@
               <a class="btn btn-default" href="<?php echo base_url('empresa/oportunidades'); ?>" role="button">Cancelar</a>         
             </div>
             <div class="float-right">
+
               <?php echo form_submit('', 'Excluir essa Oportunidade','class="btn btn-danger"') ?>
+              
             </div>
           </div> 
 
