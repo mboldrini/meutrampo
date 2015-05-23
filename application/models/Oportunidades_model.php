@@ -152,5 +152,26 @@ class  Oportunidades_model extends CI_Model{
 		}
 	}
 
+	public function cadastraCurriculum($dados = NULL){
+		
+		// se a variavel $dados que veio do controller crud  for diferente de vazia, executa:
+		if($dados != NULL){
+
+			//insere na tabela curso_ci a variavel $dados
+			$this->db->insert('curriculum',$dados);
+		}		
+	}
+
+	public function curriculumCadastrados( $dados = NULL ){
+		if( $dados != NULL ){
+			/* seleciona no DB onde o campo ID == $id */
+			$this->db->where('idusuario',$dados);
+		
+			return $this->db->get('curriculum');
+		}else{
+			return FALSE;			
+		}
+	}
+
 
 }

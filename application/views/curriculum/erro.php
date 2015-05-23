@@ -12,19 +12,7 @@
 	<div class="row">
 		<div class="col-md-12">
 
-			
-
-			
-
-
-			<?php echo $error;?>
-				<?php echo form_open_multipart('upload/cadastraCurriculum');?>
-				<input type="file" name="userfile" />
-				<br />
-				<?php echo form_submit('', 'Enviar Curriculum','class="btn btn-primary"') ?>
-			</form>
-
-
+			DEU RUIM
     	</div><!-- ./col-md-12 -->
 	</div>
 </section>		
