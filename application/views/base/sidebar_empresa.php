@@ -102,7 +102,7 @@
             </li> 
 
             <li class="treeview">
-              <a href="#">
+              <a href="<?php echo site_url('empresa/candidatos') ?>">
                 <i class="fa fa-users"></i>
                 <span>Candidatos</span>
               </a>

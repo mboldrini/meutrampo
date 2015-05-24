@@ -2,7 +2,6 @@
 
 class  Oportunidades_model extends CI_Model{
 
-	/* função de seleção por ID para posteriormente ir pra tela de edição */
 	public function get_byid( $id = NULL ){
 		if( $id != NULL ){
 			/* seleciona no DB onde o campo ID == $id */
@@ -35,6 +34,19 @@ class  Oportunidades_model extends CI_Model{
 
 		return $statusCadastrados;
 	}
+
+
+
+
+
+
+
+
+	/***********************************************
+	*											   *
+	*	TUDO RELACIONADO As OPORTUNIDADES    	   *
+	*											   *
+	***********************************************/
 	
 	public function do_insert($dados = NULL){
 		
@@ -152,13 +164,27 @@ class  Oportunidades_model extends CI_Model{
 		}
 	}
 
+
+
+
+
+
+
+	/***********************************************
+	*											   *
+	*	TUDO RELACIONADO AO CURRICULUMMMMMMMM	   *
+	*											   *
+	***********************************************/
+
 	public function cadastraCurriculum($dados = NULL){
 		
-		// se a variavel $dados que veio do controller crud  for diferente de vazia, executa:
 		if($dados != NULL){
 
 			//insere na tabela curso_ci a variavel $dados
 			$this->db->insert('curriculum',$dados);
+
+			$this->session->set_flashdata('cadastreicurriculum','Parabéns! Você acabou de enviar um novo Curriculum!');
+			redirect('upload/');
 
 		}		
 	}
@@ -194,6 +220,17 @@ class  Oportunidades_model extends CI_Model{
 			redirect('upload/');	
 		}else{
 			return false;
+		}
+	}
+
+	public function queromecandidatar($dados = NULL){
+		
+		if($dados != NULL){
+
+			$this->db->insert('candidatos',$dados);
+
+			$this->session->set_flashdata('mecandidatei','Parabéns! Você acabou de se candidatar para uma Oportunidade de Emprego!');
+			redirect('usuario/oportunidades');
 		}
 	}
 

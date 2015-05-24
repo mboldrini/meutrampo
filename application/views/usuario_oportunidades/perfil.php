@@ -17,19 +17,13 @@
           /* essa é uma variavel de idendificação do usuário a ser editado
           * essa variavel recebe o valor por meio da url, 
           * já o segment eu não faço a minima ideia mas ta funcionando */
-          $iduser = $this->uri->segment(3);
+          $idOportunidade = $this->uri->segment(3);
 
-          /* se o cara tentar acessar aluno/editar sem enviar informação, ele é redirecionado para a tela
-          * de alunos cadastrados no sistema */
-          if($iduser == NULL){
+          if($idOportunidade == NULL){
            redirect('empresa/oportunidades');
           }
 
-          /* a variavel query é executada aqui,
-          * chama o model Aluno_model,
-          * chama a função get_byid( ) - passa a variavel de identificação do usuário a ser editado
-          * o row pega a linha que está retornando do Aluno_model */ 
-          $query = $this->Oportunidades_model->get_byid($iduser)->row();
+          $query = $this->Oportunidades_model->get_byid($idOportunidade)->row();
 
         ?>
 			
@@ -169,11 +163,10 @@
         </div>
         
         <div class="panel-footer">
-          <a href="#" class="btn btn-primary">Quero me Candidatar</a>
-        
-       
-
+          <a href="<?php echo base_url( 'usuario/queromecandidatar/' . $query->id ); ?>" class="btn btn-primary">Quero me Candidatar</a>
         </div>
+
+
         
       </div>
     </div>

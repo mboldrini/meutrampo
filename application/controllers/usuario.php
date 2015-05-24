@@ -82,5 +82,26 @@ class Usuario extends CI_Controller {
 		
 	}
 
+	public function queromecandidatar(){
+
+		/* não é um usuário cadastrado? nem tenta! pois você não vai conseguir acessar essa função! eahuaeuhae */
+        if($this->session->userdata('perfil') == FALSE || $this->session->userdata('perfil') != 'usuario'){
+            redirect(base_url().'login');
+        }
+
+
+		$id = $this->session->userdata('id_usuario');
+
+		$dados = array(
+			'titulo' => 'Quero me Candidatar - Meu Trampo',
+			'ondeesta' => 'Quero me Candidatar',
+			'descricao' => '',
+			'tela'=>'queromecandidatar',
+			'infos' => $this->login_model->get_byid($id)->result(),
+		);
+		$this->load->view('usuario_oportunidades',$dados);
+		
+	}
+
 
 }

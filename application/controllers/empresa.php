@@ -184,9 +184,6 @@ class Empresa extends CI_Controller {
 
 	}
 
-
-
-
 	public function perfilOportunidade(){
 
 		if($this->session->userdata('perfil') == FALSE || $this->session->userdata('perfil') != 'empresa'){
@@ -203,6 +200,26 @@ class Empresa extends CI_Controller {
 			'tela'=>'perfil',
 			'infos' => $this->login_model->get_byid($id)->result(),			
 			'estados' => $this->Oportunidades_model->get_estados()->result()
+		);
+		$this->load->view('empresa_oportunidades',$dados);
+		
+	}
+
+	public function candidatos(){
+
+		if($this->session->userdata('perfil') == FALSE || $this->session->userdata('perfil') != 'empresa'){
+			redirect(base_url().'login');
+		}
+
+		/* pega o Id_usuario que veio da sessio e joga pra variavel id */
+		$id = $this->session->userdata('id_usuario');
+
+		$dados = array(
+			'titulo' => 'Candidatos - Meu Trampo',
+			'ondeesta' => 'Candidatos',
+			'descricao' => '',
+			'tela'=>'candidatos',
+			'infos' => $this->login_model->get_byid($id)->result()
 		);
 		$this->load->view('empresa_oportunidades',$dados);
 		
