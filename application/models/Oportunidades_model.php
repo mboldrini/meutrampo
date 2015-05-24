@@ -235,4 +235,44 @@ class  Oportunidades_model extends CI_Model{
 	}
 
 
+
+
+
+
+
+	/********************************************
+	*											*
+	*		COISAS RELACIONADAS AO CANDIDATO 	*
+	*											*
+	********************************************/
+	public function exibeOportunidades( $id = NULL ){
+		if( $id != NULL ){
+
+			$this->db->where('nomeempresa',$id);
+			
+			return $this->db->get('candidatos');
+			
+		}else{
+			return FALSE;			
+		}
+	}
+
+	public function nomeDoCandidato( $id = NULL ){
+		if( $id != NULL ){
+
+			$this->db->where('id',$id);
+
+			$this->db->limit(1);
+						
+			return $this->db->get('users');
+			
+		}else{
+			return FALSE;			
+		}
+	}
+	
+
+
+
+
 }
