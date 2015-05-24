@@ -225,6 +225,26 @@ class Empresa extends CI_Controller {
 		
 	}
 
+	public function vercandidato(){
+
+		if($this->session->userdata('perfil') == FALSE || $this->session->userdata('perfil') != 'empresa'){
+			redirect(base_url().'login');
+		}
+
+		/* pega o Id_usuario que veio da sessio e joga pra variavel id */
+		$id = $this->session->userdata('id_usuario');
+
+		$dados = array(
+			'titulo' => 'Curriculum do Candidato - Meu Trampo',
+			'ondeesta' => 'Curriculum do Candidato',
+			'descricao' => '',
+			'tela'=>'vercandidato',
+			'infos' => $this->login_model->get_byid($id)->result()
+		);
+		$this->load->view('empresa_oportunidades',$dados);
+		
+	}
+
 
 
 

@@ -62,17 +62,13 @@
 			                    <?php $nomeDoCandidato = $this->Oportunidades_model->nomeDoCandidato($key->idusuario)->row(); ?>
 
 								<td>
-									<a href="<?php echo $nomeDoCandidato->id; ?>">
+									<a href="<?php echo base_url('empresa/vercandidato/' . $nomeDoCandidato->id ); ?>">
 										<?php echo $nomeDoCandidato->nome; ?>
 									</a>
 								</td>
 
 			                    <td>
 			                    	<?php echo $key->nomeempresa; ?>
-			                    </td>
-
-			                    <td>
-			                    	<?php echo $nomeDoCandidato->id; ?>
 			                    </td>
 
 			                </tr>

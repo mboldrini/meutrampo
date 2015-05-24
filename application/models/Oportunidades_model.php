@@ -270,6 +270,20 @@ class  Oportunidades_model extends CI_Model{
 			return FALSE;			
 		}
 	}
+
+	public function curriculumDoCandidato( $id = NULL ){
+		if( $id != NULL ){
+
+			$this->db->where('idusuario',$id);
+			
+			/* mostra apenas 1 resultado, e TEM q ser 1 resultado pois ID é unico */
+			$this->db->limit(1);
+			
+			return $this->db->get('curriculum');
+		}else{
+			return FALSE;			
+		}
+	}
 	
 
 
